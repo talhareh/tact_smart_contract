@@ -43,18 +43,18 @@ export async function run(provider:NetworkProvider){
     //     }
     // );
 
-    // Check that the holding wallet is set
+    //Check that the holding wallet is set
     // const currentHoldingWallet = await ruff.getHoldingWallet();
     // console.log("Current holding wallet:", currentHoldingWallet);
 
     // 3. Transfer tokens to the holding wallet
-    const transferAmount = toNano("0.34");
-    console.log(`Transferring ${transferAmount.toString()} tokens to holding wallet`);
+    const transferAmount = toNano("0.01");
+    // console.log(`Transferring ${transferAmount.toString()} tokens to holding wallet`);
 
     await ruff.send(
         provider.sender(),
         {
-            value: toNano("0.01")
+            value: transferAmount
         },
         {
             $$type: "TransferToHoldingWallet",
